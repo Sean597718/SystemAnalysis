@@ -21,11 +21,17 @@ This is a `test`.
 This is a long quote .
 ```
 
-| thead 1 | thrad 2 | thread 3 |
+| Tables | Are | Cool |
 |:---------|:---------:|----------:|
-| *td*      | `td`      | **td**       |
-| td      | td      | td       |
-| td      | td      | td       |
+|col 3 is|right-aligned|$1600|
+|col 2 is| centered| $12|
+|zebra stripes| are neat| $1|
+
+| Markdown | Less | Pretty |
+|:---------|:---------:|----------:|
+| *Still*| `renders`| **nicely**|
+|1|2|3|
+
 
 
 - [X] do something
