@@ -9,9 +9,7 @@
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/popper.js/2.9.3/umd/popper.min.js"></script>
-    <!-- <script src="https://cdn.staticfile.org/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <script src="https://kit.fontawesome.com/e4b7016783.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <style>
         /* 加入以下 CSS */
         .container-fluid {
@@ -20,10 +18,8 @@
             height: 100vh;
             vertical-align: middle;
         }
-
         .map {
             flex: 1;
-            margin: 0;
         }
 
         .alert-success {
@@ -41,34 +37,14 @@
 
 <body>
     <div class="container-fluid">
-        <div class="row mt-2">
-            <div class="col-12 p-0">
-                <div class="input-group">
-                    <input id="from" type="text" class="form-control" style="flex: 7;" placeholder="請輸入起始地">
-                    <button class="btn btn-primary" style="flex: 3;" type="button" onclick="getPosition()">
-                        <i class="fa-solid fa-location-dot fa-lg" style="color: #ffffff;"></i> 現在位置
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-2">
-            <div class="col-12 p-0">
-                <div class="input-group">
-                    <input id="to" type="text" class="form-control" style="flex: 7;" placeholder="請輸入目的地">
-                    <button id="calcBtn" class="btn btn-success" style="flex: 3;" type="button">
-                        <i class="fa-solid fa-route fa-lg" style="color: #ffffff;"></i> 路線規劃
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="row">
+        <div class="row mt-1">
             <div class="d-grid">
                 <button class="btn btn-info btn-block" type="button" onclick="startJourney()">
-                    <i class="fa-solid fa-taxi fa-lg" style="color: #000000;"></i><b> 出發</b>
+                    <i class="bi bi-car-front-fill"></i><b> 出發</b>
                 </button>
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-1">
             <div class="col-12">
                 <div class="text-white bg-success mb-3 card">
                     <h5 class="card-header">路徑指示</h5>
@@ -79,19 +55,17 @@
                 </div>
             </div>
         </div>
-        <div id="googleMap" style="flex: 4;" class="map"></div>
-        <div class="text-white bg-info card">
-            <h5 class="card-header">計費資訊</h5>
+        <div id="googleMap" class="map"></div>
+        <div class="text-white bg-info card mt-1">
             <div class="card-body">
                 <h5 class="card-title">總收費</h5>
                 <p id="card-fare" class="card-text">怠速時間與行駛距離</p>
-                <p id="card-latlng" class="card-text">座標</p>
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-1">
             <div class="d-grid">
                 <button class="btn btn-danger btn-block" type="button" onclick="endJourney()">
-                    <i class="fa-solid fa-flag-checkered fa-lg"></i><b> 結束行程</b>
+                    <i class="bi bi-send-check-fill"></i><b> 結束行程</b>
                 </button>
             </div>
         </div>
@@ -102,8 +76,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
         integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
         crossorigin="anonymous"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_s5-fCc69D64n3iA4PznfVhF3Sn_5YVA&libraries=drawing,geometry,places&language=zh-TW"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_s5-fCc69D64n3iA4PznfVhF3Sn_5YVA&libraries=drawing,geometry,places&language=zh-TW"></script>
     <script src="navigator.js"></script>
 </body>
 
