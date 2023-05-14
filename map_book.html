@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<head>
+  
+</head>
+<style>
+  * {
+    border: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  body {
+    height: 100%;
+    width: 100%;
+  }
+
+  main {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  main h1 {
+    margin: 5vh 0px;
+    font-weight: 800;
+  }
+
+  .order {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .title-text {
+    display: flex;
+    margin: 20px 0px;
+    width: 100%;
+
+  }
+
+  .next,
+  .previous,
+  .memo {
+    display: flex;
+    margin: 20px 0px;
+    width: 100%;
+  }
+
+  .title-text label {
+    color: rgb(22, 111, 22);
+    font-weight: 600;
+    margin: 0.25rem;
+  }
+
+  .next label,
+  .previous label,
+  .memo label,
+  .instructions label {
+    color: #5c5a5a;
+    font-weight: 600;
+    margin: 0.25rem;
+  }
+
+  .title-text input,
+  .next input,
+  .previous input,
+  .memo input,
+  .instructions input {
+    margin: 0.25rem;
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 20rem;
+    padding: 10px;
+  }
+
+  .title-text input::-moz-placeholder,
+  .next input::-moz-placeholder,
+  .previous input::-moz-placeholder,
+  .memo input::-moz-placeholder,
+  .instructions input::-moz-placeholder,
+  .ph input::-moz-placeholder {
+    color: #5c5a5a;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .title-text input::placeholder,
+  .next input::placeholder,
+  .previous input::placeholder,
+  .memo input::placeholder,
+  .instructions input::placeholder,
+  .ph input::placeholder {
+    color: #5c5a5a;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .next,
+  .previous,
+  .call,
+  .cancel {
+    color: white;
+    font-weight: 800;
+    border-radius: 20px;
+    width: 8rem;
+    padding: 5px;
+  }
+
+  .next,
+  .call {
+    background-color: rgb(22, 111, 22);
+  }
+
+  .previous,
+  .cancel {
+    background-color: rgb(219, 73, 11);
+  }
+
+  .input-area {
+    background-color: white;
+    color: black;
+    font-weight: 800;
+    text-align: left;
+  }
+
+  .memo textarea {
+    border: 2px solid black;
+    border-radius: 2px;
+    padding: 1rem;
+    font-weight: 600;
+    width: 20rem;
+    height: 10rem;
+    resize: none;
+  }
+
+  #instructions-label {
+    color: gray;
+    font-size: smaller;
+  }
+
+  #welcome-label {
+    color: black;
+    font-size: 24;
+    font-weight: bold;
+  }
+
+
+  /*# sourceMappingURL=style.css.map */
+</style>
+
+<main>
+  <form action="" class="order">
+    <label id="welcome-label">嗨，今天想去哪兒？</label>
+    <div class="title-text">
+      <label for="title-text">您的上車地點</label>
+      <input id="pick-up" class="input-area" name="pick-up" type="text" required />
+    </div>
+    <div class="title-text">
+      <label for="title-text">您的下車地點</label>
+      <input id="drop-off" class="input-area" name="drop-off" type="text" required />
+    </div>
+    <div class="title-text">
+      <label>您的手機號碼</label>
+      <label id="instructions-label">方便司機找到您的位置，</label>
+      <label id="instructions-label">讓您安心上車出發。</label>
+      <input id="ph" type="text" pattern="09\d{8}" placeholder="輸入格式：0900123456" required>
+    </div>
+    <button class="call">下一步</button>
+  </form>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_s5-fCc69D64n3iA4PznfVhF3Sn_5YVA&libraries=drawing,geometry,places&language=zh-TW"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="autocomplete.js"></script>
+</main>

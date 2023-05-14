@@ -1,0 +1,178 @@
+<style>
+  * {
+    border: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  body {
+    height: 100%;
+    width: 100%;
+  }
+
+  main {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  main h1 {
+    margin: 5vh 0px;
+    font-weight: 800;
+  }
+
+  .order {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .pick-up,
+  .drop-off,
+  .next,
+  .previous,
+  .memo {
+    display: flex;
+    margin: 20px 0px;
+    width: 100%;
+  }
+
+  .pick-up label,
+  .drop-off label,
+  .next label,
+  .previous label,
+  .memo label {
+    color: #5c5a5a;
+    font-weight: 600;
+    margin: 0.25rem;
+  }
+
+  .pick-up input,
+  .drop-off input,
+  .next input,
+  .previous input,
+  .memo input {
+    margin: 0.25rem;
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 20rem;
+    padding: 10px;
+  }
+
+  .pick-up input::-moz-placeholder,
+  .drop-off input::-moz-placeholder,
+  .next input::-moz-placeholder,
+  .previous input::-moz-placeholder,
+  .memo input::-moz-placeholder {
+    color: #5c5a5a;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .pick-up input::placeholder,
+  .drop-off input::placeholder,
+  .next input::placeholder,
+  .previous input::placeholder,
+  .memo input::placeholder {
+    color: #5c5a5a;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .next,
+  .previous,
+  .call,
+  .cancel {
+    color: white;
+    font-weight: 800;
+    border-radius: 20px;
+    width: 8rem;
+    padding: 5px;
+  }
+
+  .next,
+  .call {
+    background-color: rgb(22, 111, 22);
+  }
+
+  .previous,
+  .cancel {
+    background-color: rgb(219, 73, 11);
+  }
+
+  .check {
+    background-color: black;
+    color: white;
+    font-weight: 800;
+    text-align: left;
+  }
+
+  .memo textarea {
+    border: 2px solid black;
+    border-radius: 2px;
+    padding: 1rem;
+    font-weight: 600;
+    width: 20rem;
+    height: 10rem;
+    resize: none;
+  }
+
+  .map {
+    height: 18rem;
+    width: 18rem;
+    border: 5px solid black;
+    border-radius: 2px;
+    margin: 0.75rem;
+  }
+
+  .order_inform {
+    display: flex;
+    padding: 0.75rem;
+  }
+
+  .order_inform label,
+  .order_inform input {
+    font-weight: 600;
+  }
+
+  /*# sourceMappingURL=style.css.map */
+</style>
+
+<main>
+  <form action="" class="order">
+    <div class="pick-up">
+      <label for="
+                pick-up">上車</label>
+      <input id="pick-up" class="check" name="pick-up" type="text" disabled="disabled" value="橋頭糖廠"/>
+    </div>
+    <div class="drop-off">
+      <label for="
+                drop-off">下車</label>
+      <input id="drop-off" class="check" name="drop-off" type="text" disabled="disabled" value="高鐵台中站"/>
+    </div>
+    <div id="map" class="map"></div>
+    <div class="order_inform">
+      <div class="row">
+        <label>預估行程:</label>
+        <input id="estimated-distance" type="text" value="--"/>
+      </div>
+      <div class="row">
+        <label>預估車資:</label>
+        <input id="estimated-fare" type="text" value="--"/>
+      </div>
+      <div class="row">
+        <label>乘客備註:</label>
+        <input type="text" />
+      </div>
+    </div>
+    <button class="call">叫車</button>
+    <button class="previous">返回</button>
+    <!-- <button class="cancel">取消</button> -->
+  </form>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_s5-fCc69D64n3iA4PznfVhF3Sn_5YVA&libraries=drawing,geometry,places"></script>
+  <script src="map_preview.js"></script>
+</main>
